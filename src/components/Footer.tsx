@@ -76,7 +76,15 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} auto024mentes.hu. Minden jog
             fenntartva.
           </p>
-          <CookieSettingsButton />
+          <div className="flex items-center gap-4">
+            <a
+              href="/adatvedelem"
+              className="text-gray-600 hover:text-accent-400 transition-colors text-xs"
+            >
+              Adatvédelmi tájékoztató
+            </a>
+            <CookieSettingsButton />
+          </div>
         </div>
       </div>
     </footer>

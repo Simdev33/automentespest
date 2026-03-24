@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Cookie, X, ChevronDown, Shield } from "lucide-react";
+import { Cookie, ChevronDown, Shield } from "lucide-react";
 
 interface CookiePreferences {
   necessary: boolean;
@@ -76,6 +76,14 @@ export default function CookieConsent() {
       const timer = setTimeout(() => setVisible(true), 800);
       return () => clearTimeout(timer);
     }
+
+    const handleReopen = () => {
+      setPrefs(DEFAULT_PREFS);
+      setShowDetails(false);
+      setVisible(true);
+    };
+    window.addEventListener("reopenCookieConsent", handleReopen);
+    return () => window.removeEventListener("reopenCookieConsent", handleReopen);
   }, []);
 
   const handleAcceptAll = useCallback(() => {
@@ -227,7 +235,7 @@ export default function CookieConsent() {
           <p className="text-[11px] text-gray-600 text-center">
             A &quot;Testreszabás&quot; gombra kattintva részletesen
             kiválaszthatja, mely sütiket engedélyezi. Részletek az{" "}
-            <a href="#" className="text-accent-500/70 hover:text-accent-400 underline">
+            <a href="/adatvedelem" className="text-accent-500/70 hover:text-accent-400 underline">
               Adatvédelmi tájékoztatóban
             </a>
             .
@@ -239,11 +247,8 @@ export default function CookieConsent() {
 }
 
 export function CookieSettingsButton() {
-  const [, setForceRender] = useState(0);
-
   const openSettings = () => {
     localStorage.removeItem(COOKIE_KEY);
-    setForceRender((n) => n + 1);
     window.dispatchEvent(new Event("reopenCookieConsent"));
   };
 

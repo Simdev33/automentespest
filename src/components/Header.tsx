@@ -39,19 +39,15 @@ export default function Header() {
           <a href="#" className="flex items-center gap-2">
             <Image
               src="/automentespestlogo.svg"
-              alt="AutomentésPest logó"
+              alt="auto024mentes logó"
               width={40}
               height={40}
               className="w-10 h-10"
             />
             <div className="leading-tight">
-              <span className="font-bold text-gray-200 text-lg">
-                {" "}
-                Autómentés
-              </span>
-              <span className="font-extrabold text-accent-500 text-lg uppercase">
-                PEST
-              </span>
+              <span className="font-bold text-white text-lg">auto</span>
+              <span className="font-extrabold text-accent-500 text-lg">024</span>
+              <span className="font-bold text-white text-lg">mentes.hu</span>
             </div>
           </a>
 

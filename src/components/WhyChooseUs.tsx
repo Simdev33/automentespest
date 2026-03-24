@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
             MIÉRT MI?
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-            Miért válassza az autómentéspest szolgáltatást?
+            Miért válassza az auto024mentes szolgáltatást?
           </h2>
         </div>
 

@@ -11,19 +11,15 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Image
                 src="/automentespestlogo.svg"
-                alt="AutomentésPest logó"
+                alt="auto024mentes logó"
                 width={40}
                 height={40}
                 className="w-10 h-10"
               />
               <div>
-                <span className="font-bold text-gray-400 text-lg">
-                  {" "}
-                  Autómentés
-                </span>
-                <span className="font-extrabold text-accent-500 text-lg uppercase">
-                  PEST
-                </span>
+                <span className="font-bold text-gray-400 text-lg">auto</span>
+                <span className="font-extrabold text-accent-500 text-lg">024</span>
+                <span className="font-bold text-gray-400 text-lg">mentes.hu</span>
               </div>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed">
@@ -77,7 +73,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-600 text-sm">
-            &copy; {new Date().getFullYear()} automentespest.hu. Minden jog
+            &copy; {new Date().getFullYear()} auto024mentes.hu. Minden jog
             fenntartva.
           </p>
           <CookieSettingsButton />

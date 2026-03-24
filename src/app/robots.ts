@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.automentespest.hu/sitemap.xml",
+    sitemap: "https://www.auto024mentes.hu/sitemap.xml",
   };
 }

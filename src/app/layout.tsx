@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { GTMHead, GTMBody, GtagScripts } from "@/components/GoogleTracking";
+import { GTMHead, GTMBody, GtagScripts, PhoneConversionTracker } from "@/components/GoogleTracking";
 
 export const metadata: Metadata = {
   title: "auto024mentes.hu - Autómentés Budapest és Pest megye 0-24",
@@ -33,6 +33,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased bg-gray-950 text-gray-100">
         <GTMBody />
+        <PhoneConversionTracker />
         {children}
       </body>
     </html>

@@ -36,10 +36,10 @@ export default function Contact() {
                   Telefonszám
                 </h3>
                 <a
-                  href="tel:+36206282000"
+                  href="tel:+36701718000"
                   className="block text-2xl font-bold text-accent-500 hover:text-accent-400 transition-colors"
                 >
-                  +36 20 628 2000
+                  +36 70 171 8000
                 </a>
               </div>
             </div>
@@ -53,11 +53,11 @@ export default function Contact() {
               Hívjon minket bármikor, az év minden napján, 0-24!
             </p>
             <a
-              href="tel:+36206282000"
+              href="tel:+36701718000"
               className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-black font-bold px-6 py-3 rounded-full transition-all hover:shadow-lg"
             >
               <Phone className="w-5 h-5" />
-              +36 20 628 2000
+              +36 70 171 8000
             </a>
           </div>
         </div>

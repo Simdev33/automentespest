@@ -40,11 +40,11 @@ export default function Hero() {
 
         <div className="animate-fade-in-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
           <a
-            href="tel:+36206282000"
+            href="tel:+36701718000"
             className="group relative bg-accent-500 hover:bg-accent-600 text-black font-bold px-8 py-4 rounded-full text-lg transition-all hover:shadow-2xl hover:shadow-accent-500/30 flex items-center gap-3"
           >
             <Phone className="w-5 h-5 group-hover:animate-bounce" />
-            +36 20 628 2000
+            +36 70 171 8000
           </a>
           <a
             href="#szolgaltatasok"

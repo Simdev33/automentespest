@@ -24,11 +24,11 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="tel:+36206282000"
+              href="tel:+36701718000"
               className="flex items-center gap-2 hover:text-accent-400 transition-colors"
             >
               <Phone className="w-4 h-4 text-accent-500" />
-              <span className="font-semibold">+36 20 628 2000</span>
+              <span className="font-semibold">+36 70 171 8000</span>
             </a>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="tel:+36206282000"
+              href="tel:+36701718000"
               className="bg-accent-500 hover:bg-accent-600 text-black font-bold px-5 py-2.5 rounded-full transition-all hover:shadow-lg flex items-center gap-2 text-sm"
             >
               <Phone className="w-4 h-4" />
@@ -93,11 +93,11 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="tel:+36206282000"
+                href="tel:+36701718000"
                 className="block bg-accent-500 hover:bg-accent-600 text-black font-bold px-5 py-3 rounded-full text-center transition-all"
               >
                 <Phone className="w-4 h-4 inline mr-2" />
-                +36 20 628 2000
+                +36 70 171 8000
               </a>
             </div>
           </div>

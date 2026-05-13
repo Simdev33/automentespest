@@ -64,7 +64,7 @@ export default function WhenToCall() {
                   {scenario.description}
                 </p>
                 <a
-                  href="tel:+36206282000"
+                  href="tel:+36701718000"
                   className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:text-accent-400 transition-colors"
                 >
                   <Phone className="w-4 h-4" />

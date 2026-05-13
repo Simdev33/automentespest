@@ -8,7 +8,7 @@ const stats = [
   },
   {
     icon: Phone,
-    title: "+36 20 628 2000",
+    title: "+36 70 171 8000",
     description: "Bármilyen vészhelyzet esetén azonnal a helyszínre sietünk",
   },
   {

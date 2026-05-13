@@ -47,7 +47,7 @@ export default function About() {
             </ul>
 
             <a
-              href="tel:+36206282000"
+              href="tel:+36701718000"
               className="inline-flex items-center gap-3 bg-accent-500 hover:bg-accent-600 text-black font-bold px-8 py-4 rounded-full text-lg transition-all hover:shadow-xl hover:shadow-accent-500/20"
             >
               <Phone className="w-5 h-5" />

@@ -57,7 +57,7 @@ export function GtagScripts() {
   if (GADS_ID) {
     configLines.push(`gtag('config', '${GADS_ID}');`);
     if (GADS_CONVERSION_LABEL) {
-      configLines.push(`gtag('config', '${GADS_CONVERSION_LABEL}', { 'phone_conversion_number': '+36 20 628 2000' });`);
+      configLines.push(`gtag('config', '${GADS_CONVERSION_LABEL}', { 'phone_conversion_number': '+36 70 171 8000' });`);
     }
   }
 

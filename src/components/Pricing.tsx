@@ -3,26 +3,26 @@ import { Truck, Globe, Phone } from "lucide-react";
 const pricingCards = [
   {
     icon: Truck,
-    title: "Belföld",
+    title: "Nappali díjszabás",
     highlight: true,
     items: [
-      { label: "Fix kilométerdíj", price: "260 Ft/km" },
-      { label: "100 km alatt fix ár", price: "26.000 Ft" },
-      { label: "Budapest területén belül", price: "Egyeztetés szerint" },
+      { label: "Időszak", price: "8:00–22:00" },
+      { label: "Autóbikázás díja", price: "18.000 Ft" },
+      { label: "Előzetes ártájékoztatás", price: "Biztosított" },
       { label: "Rejtett költségek", price: "Nincsenek" },
     ],
-    note: "Budapest területén belül a szállítás díja a megtett távolság alapján alakul, előzetes egyeztetés szerint. Nincsenek rejtett költségek vagy külön felszámított útdíjak.",
+    note: "A nappali, 8:00 és 22:00 közötti helyszíni autóbikázás díja 18.000 Ft. Nincsenek rejtett költségek.",
   },
   {
     icon: Globe,
-    title: "Külföld",
+    title: "Éjszakai díjszabás",
     highlight: true,
     items: [
-      { label: "Külföldi szállítás", price: "Egyedi kalkuláció" },
-      { label: "GPS nyomkövetés", price: "Biztosított" },
-      { label: "Pontos helymeghatározás", price: "Műholdas" },
+      { label: "Időszak", price: "22:00–8:00" },
+      { label: "Autóbikázás díja", price: "Egyedi" },
+      { label: "Előzetes ártájékoztatás", price: "Biztosított" },
     ],
-    note: "A külföldi szállítás díja egyedi kalkuláció alapján kerül megállapításra. GPS-alapú műholdas nyomkövető rendszert használunk.",
+    note: "Az éjszakai, 22:00 és 8:00 közötti autóbikázás díja egyedi kalkuláció alapján kerül megállapításra. A pontos összegről előre tájékoztatást adunk.",
   },
 ];
 
@@ -35,10 +35,10 @@ export default function Pricing() {
             DÍJSZABÁS
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-            Autómentés és járműszállítás díjazása
+            Autóbikázás díjazása
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Rugalmas árképzés, egyedi megállapodás alapján — belföldön és külföldön egyaránt.
+            Nappal fix, éjszaka előzetesen egyeztetett díjszabás — Budapesten és Pest megyében.
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export default function Pricing() {
           <ul className="space-y-2 text-gray-400 text-sm">
             <li className="flex items-start gap-2">
               <span className="text-accent-500 mt-1">•</span>
-              Balesetes vagy erősen sérült járművek esetén az ár eltérhet.
+              A nappali és éjszakai díjszabást a hívás időpontja határozza meg.
             </li>
             <li className="flex items-start gap-2">
               <span className="text-accent-500 mt-1">•</span>
@@ -124,7 +124,7 @@ export default function Pricing() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-accent-500 mt-1">•</span>
-              Személyautók és kisteherautók autómentését vállaljuk.
+              Személyautók és kisteherautók helyszíni bikázását vállaljuk.
             </li>
             <li className="flex items-start gap-2">
               <span className="text-accent-500 mt-1">•</span>

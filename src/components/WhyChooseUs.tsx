@@ -3,9 +3,9 @@ import { Shield, Banknote, Timer, Users, Zap, Clock } from "lucide-react";
 const reasons = [
   {
     icon: Shield,
-    title: "Biztonságos szállítás",
+    title: "Biztonságos autóbikázás",
     description:
-      "Korszerű autómentő járműveinkkel biztonságos járműszállítást biztosítunk személyautók és kisteherautók számára.",
+      "Korszerű indítóberendezéseinkkel, a jármű elektronikájára ügyelve végezzük az autóbikázást.",
   },
   {
     icon: Banknote,
@@ -17,19 +17,19 @@ const reasons = [
     icon: Timer,
     title: "Gyors reakcióidő",
     description:
-      "Autómentő csapatunk gyorsan és felkészülten érkezik a helyszínre, hogy mielőbb segíthessünk.",
+      "Csapatunk gyorsan és felkészülten érkezik a helyszínre, hogy mielőbb beindíthassuk autóját.",
   },
   {
     icon: Users,
     title: "Tapasztalt szakemberek",
     description:
-      "Több éves szakmai tapasztalattal rendelkező csapatunk minden helyzetben megoldást talál.",
+      "Több éves szakmai tapasztalattal rendelkező csapatunk szakszerű indítássegítést nyújt.",
   },
   {
     icon: Zap,
     title: "Azonnali indulás",
     description:
-      "Bármilyen vészhelyzet esetén azonnal a helyszínre sietünk, hogy Ön mielőbb folytathassa útját.",
+      "Lemerült akkumulátor esetén azonnal a helyszínre sietünk, hogy Ön mielőbb folytathassa útját.",
   },
   {
     icon: Clock,
@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
             MIÉRT MI?
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-            Miért válassza az auto024mentes szolgáltatást?
+            Miért válassza autóbikázás szolgáltatásunkat?
           </h2>
         </div>
 

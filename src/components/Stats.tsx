@@ -9,12 +9,12 @@ const stats = [
   {
     icon: Phone,
     title: "+36 70 171 8000",
-    description: "Bármilyen vészhelyzet esetén azonnal a helyszínre sietünk",
+    description: "Lemerült akkumulátor esetén azonnal a helyszínre sietünk",
   },
   {
     icon: Banknote,
-    title: "Fix 260 Ft/km",
-    description: "Pontos, tiszta árak — 100 km alatt fix 26.000 Ft",
+    title: "18.000 Ft nappal",
+    description: "8:00–22:00 között fix, 22:00–8:00 között egyedi ár",
   },
 ];
 

@@ -5,26 +5,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 const images = [
-  "/ROL01239-desktop.webp",
-  "/ROL01243-desktop.webp",
-  "/ROL01247-desktop.webp",
-  "/ROL01259-desktop.webp",
-  "/ROL01274-desktop.webp",
-  "/ROL01308-desktop.webp",
-  "/ROL01322-desktop.webp",
-  "/ROL01345-desktop.webp",
-  "/ROL01347-desktop.webp",
-  "/ROL01350-desktop.webp",
-  "/ROL01361-desktop.webp",
-  "/ROL01383-desktop.webp",
-  "/ROL01390-desktop.webp",
-  "/ROL01410-desktop.webp",
-  "/ROL01455-desktop.webp",
-  "/ROL01458-desktop.webp",
-  "/ROL01480-desktop.webp",
-  "/ROL01495-desktop.webp",
-  "/signal-2026-03-24-135507_003.jpeg",
-  "/signal-2026-03-24-135507_004.jpeg",
+  "/gallery-bikazas-01.png",
+  "/gallery-bikazas-02.png",
+  "/gallery-bikazas-03.png",
+  "/gallery-bikazas-04.png",
+  "/gallery-bikazas-05.png",
+  "/gallery-bikazas-06.png",
+  "/gallery-bikazas-07.png",
 ];
 
 export default function Gallery() {
@@ -61,7 +48,7 @@ export default function Gallery() {
           >
             <Image
               src={src}
-              alt={`Autómentés galéria ${index + 1}`}
+              alt={`Autóbikázás galéria ${index + 1}`}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"

@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center pt-28 pb-32 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero.webp')" }}
+        style={{ backgroundImage: "url('/hero-autobikazas.png')" }}
       />
       <div className="absolute inset-0 bg-black/70" />
       <div className="absolute inset-0 bg-gradient-to-br from-yellow-950/40 via-black/30 to-yellow-950/30" />
@@ -18,7 +18,7 @@ export default function Hero() {
         </div>
 
         <h1 className="animate-fade-in-up-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4">
-          AUTÓMENTÉS
+          AUTÓBIKÁZÁS
           <br />
           <span className="text-accent-400">BUDAPEST</span> ÉS PEST MEGYE
         </h1>
@@ -28,14 +28,14 @@ export default function Hero() {
         </h2>
 
         <p className="animate-fade-in-up-delay-3 text-lg md:text-xl text-gray-300/80 max-w-2xl mx-auto mb-4 leading-relaxed">
-          Autód leállt az út szélén? Nem indul, vagy balesetet szenvedtél?
-          Ne aggódj — autómentő csapatunk perceken belül úton van feléd!
-          Budapesten és Pest megyében gyors, szakszerű autómentést és
-          járműszállítást biztosítunk, tisztességes áron.
+          Lemerült az akkumulátor, és nem indul az autód? Ne aggódj —
+          csapatunk rövid időn belül úton van feléd! Budapesten és Pest
+          megyében gyors, szakszerű helyszíni autóbikázást biztosítunk,
+          tisztességes áron.
         </p>
 
         <p className="animate-fade-in-up-delay-3 text-xl md:text-2xl font-bold text-accent-400 mb-10">
-          Pontos tiszta árak: Fix 260 Ft/km. 100 km alatt fix 26.000 Ft
+          8:00–22:00 között 18.000 Ft, 22:00–8:00 között egyedi ár
         </p>
 
         <div className="animate-fade-in-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">

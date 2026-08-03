@@ -23,8 +23,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed">
-              Gyors és megbízható autómentő szolgáltatás Budapest és Pest megye
-              területén, a nap 24 órájában.
+              Gyors és megbízható autóbikázás és helyszíni akkumulátor-indítás
+              Budapest és Pest megye területén, a nap 24 órájában.
             </p>
           </div>
 

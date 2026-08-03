@@ -2,11 +2,11 @@ import { Phone, CheckCircle } from "lucide-react";
 import Gallery from "./Gallery";
 
 const highlights = [
-  "Gyors és szakszerű autómentés",
-  "Korszerű autómentő járművek",
+  "Gyors és szakszerű autóbikázás",
+  "Korszerű indítóberendezések",
   "Korrekt árak, rejtett költségek nélkül",
   "0-24 elérhető, hétvégén és munkaszüneti napokon is",
-  "Személyautók és kisteherautók mentése",
+  "Személyautók és kisteherautók indítása",
 ];
 
 export default function About() {
@@ -19,22 +19,22 @@ export default function About() {
               RÓLUNK
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
-              Megbízható autómentés{" "}
+              Megbízható autóbikázás{" "}
               <span className="text-accent-500">
                 Budapest és Pest megye területén
               </span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              Évek óta segítünk az utakon bajba jutott sofőröknek — éjjel-nappal,
-              az év minden napján. Legyen szó váratlan meghibásodásról, balesetről
-              vagy egyszerű lerobbanásról, tapasztalt csapatunk villámgyorsan a
-              helyszínre érkezik és megoldja a helyzetet.
+              Évek óta segítünk azoknak a sofőröknek, akiknek lemerült az
+              akkumulátora — éjjel-nappal, az év minden napján. Legyen szó
+              otthoni, munkahelyi vagy útközbeni indításról, tapasztalt
+              csapatunk gyorsan a helyszínre érkezik és megoldja a helyzetet.
             </p>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Modern, felszerelt mentőjárműveinkkel biztonságosan szállítjuk
-              személyautóját vagy kisteherautóját bárhová. Nálunk nincsenek
-              rejtett díjak és meglepetések — amit telefonon mondunk, az lesz a
-              végösszeg.
+              Modern, professzionális indítóberendezéseinkkel biztonságosan
+              segítünk beindítani személyautóját vagy kisteherautóját. Nálunk
+              nincsenek rejtett díjak és meglepetések — amit telefonon mondunk,
+              az lesz a végösszeg.
             </p>
 
             <ul className="space-y-3 mb-8">

@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "Hol érhető el az autómentés szolgáltatás?",
+    question: "Hol érhető el az autóbikázás szolgáltatás?",
     answer:
       "Szolgáltatásunk Budapest egész területén és Pest megyében érhető el, a nap 24 órájában — hétvégén és ünnepnapokon is.",
   },
@@ -15,14 +15,14 @@ const faqs = [
       "Budapesten belül jellemzően a lehető legrövidebb időn belül a helyszínen vagyunk. A pontos érkezési időről telefonon egyeztetünk.",
   },
   {
-    question: "Mennyibe kerül az autómentés?",
+    question: "Mennyibe kerül az autóbikázás?",
     answer:
-      "Fix kilométerdíjjal dolgozunk: 260 Ft/km. 100 km alatt fix 26.000 Ft. Balesetes vagy erősen sérült járművek esetén az ár eltérhet. Minden esetben előzetes tájékoztatást adunk telefonon.",
+      "8:00 és 22:00 között az autóbikázás díja 18.000 Ft. 22:00 és 8:00 között egyedi árral dolgozunk, amelyről előzetesen tájékoztatást adunk telefonon.",
   },
   {
     question: "Milyen járművekhez kérhető a szolgáltatás?",
     answer:
-      "Személyautók és kisteherautók autómentését vállaljuk.",
+      "Személyautók és kisteherautók helyszíni bikázását és akkumulátor-indítását vállaljuk.",
   },
   {
     question: "Milyen fizetési módokat fogadnak el?",
@@ -30,19 +30,19 @@ const faqs = [
       "Készpénzes és bankkártyás fizetés is elérhető — amelyik Önnek a legkényelmesebb.",
   },
   {
-    question: "Vállalnak külföldi szállítást is?",
+    question: "Biztonságos az autóbikázás a jármű elektronikájára nézve?",
     answer:
-      "Igen, vállalunk teljes körű járműszállítást Magyarország egész területén, valamint külföldre is. A külföldi szállítás díja egyedi kalkuláció alapján kerül megállapításra.",
+      "Igen. Professzionális indítóberendezést használunk, és az indítást körültekintően, a jármű elektronikájának védelmére figyelve végezzük.",
   },
   {
-    question: "Mely településeken érhető el az autómentés?",
+    question: "Mely településeken érhető el az autóbikázás?",
     answer:
       "Budapest, Érd, Szentendre, Vác, Gödöllő, Monor, Cegléd, Dunakeszi, Budaörs, Pilisvörösvár és Pest megye teljes területe.",
   },
   {
     question: "Van csereautó-bérlési lehetőség?",
     answer:
-      "Ha a járműved meghibásodott és azonnali megoldásra van szükséged, lehetőséged van csereautót bérelni Budapesten és Pest megye teljes területén a pestautoberles.hu oldalon.",
+      "Ha az autó a bikázás után sem indul el, és azonnali megoldásra van szükséged, lehetőséged van csereautót bérelni Budapesten és Pest megye teljes területén a pestautoberles.hu oldalon.",
   },
 ];
 

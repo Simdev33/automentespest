@@ -3,27 +3,27 @@ import { Phone, CircleDot } from "lucide-react";
 const scenarios = [
   {
     number: "01",
-    title: "Műszaki hiba vagy baleset miatt mozgásképtelen a járműved",
+    title: "Lemerült az akkumulátor, és nem indul a járműved",
     description:
-      "Egy hívás, és már indulunk is. Autómentő csapatunk gyorsan a helyszínre érkezik, és biztonságosan elszállítja a járművet a megadott címre.",
+      "Egy hívás, és már indulunk is. Csapatunk gyorsan a helyszínre érkezik, és szakszerűen beindítja a járművet.",
   },
   {
     number: "02",
-    title: "Lerobbanás az úton vagy autópályán",
+    title: "Útközben merült le az akkumulátor",
     description:
-      "Az autópályán minden perc számít. Autómentő szolgáltatásunk a lehető legrövidebb időn belül megérkezik, és szakszerűen megoldja a helyzetet.",
+      "Ha útközben nem indul az autó, minden perc számít. A lehető legrövidebb időn belül megérkezünk, és segítünk folytatni az utat.",
   },
   {
     number: "03",
-    title: "Járműszállítás műhelybe vagy telephelyre",
+    title: "Otthon, munkahelyen vagy parkolóban nem indul az autó",
     description:
-      "Személyautók és kisteherautók biztonságos szállítása műhelybe, telephelyre vagy megadott címre — belföldön és külföldön egyaránt.",
+      "A megadott címre érkezünk, és professzionális indítóberendezéssel helyben segítünk életre kelteni az akkumulátort.",
   },
   {
     number: "04",
-    title: "Defekt vagy sérült kerék",
+    title: "A hideg idő miatt gyengült le az akkumulátor",
     description:
-      "Defekt vagy sérült kerék esetén gyors, helyszíni kerékcsere. Amennyiben a csere nem megoldható, a jármű elszállítását is biztosítjuk.",
+      "A hidegben legyengült akkumulátor gyakran váratlanul mondja fel a szolgálatot. Gyors helyszíni bikázással segítünk.",
   },
 ];
 

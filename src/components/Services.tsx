@@ -3,39 +3,39 @@ import { Truck, Package, Wrench, RefreshCw, Fuel, Globe, Phone } from "lucide-re
 const services = [
   {
     icon: Truck,
-    title: "Autómentés",
+    title: "Autóbikázás",
     description:
-      "Műszaki hiba vagy baleset esetén gyors és szakszerű autómentés Budapest és Pest megye teljes területén.",
+      "Lemerült akkumulátor esetén gyors és szakszerű autóbikázás Budapest és Pest megye teljes területén.",
   },
   {
     icon: Package,
-    title: "Járműszállítás",
+    title: "Helyszíni akkumulátor-indítás",
     description:
-      "Személyautók és kisteherautók biztonságos szállítása műhelybe, telephelyre vagy megadott címre.",
+      "Személyautók és kisteherautók biztonságos beindítása professzionális indítóberendezéssel.",
   },
   {
     icon: Wrench,
-    title: "Helyszíni segítség",
+    title: "Akkumulátor-ellenőrzés",
     description:
-      "Gyors beavatkozás kisebb meghibásodások esetén, hogy járműved a lehető leghamarabb megoldást kapjon.",
+      "A helyszínen ellenőrizzük az akkumulátor állapotát, és segítünk feltárni, miért nem indul a jármű.",
   },
   {
     icon: RefreshCw,
-    title: "Kerékcsere",
+    title: "Professzionális indítássegítés",
     description:
-      "Defekt vagy sérült kerék esetén gyors, helyszíni kerékcsere. Amennyiben a csere nem megoldható, a jármű elszállítását is biztosítjuk.",
+      "Korszerű eszközzel, a jármű elektronikájának védelmére figyelve indítjuk be autódat.",
   },
   {
     icon: Fuel,
-    title: "Kifogyott üzemanyag",
+    title: "Gyors kiszállás",
     description:
-      "Ha útközben kifogytál az üzemanyagból, gyors helyszíni segítséget nyújtunk. Szükség esetén a jármű elszállítását is megoldjuk.",
+      "Otthon, munkahelyen, parkolóban vagy útközben is gyorsan a helyszínre érkezünk.",
   },
   {
     icon: Globe,
-    title: "Külföldi szállítás",
+    title: "0-24 elérhetőség",
     description:
-      "Vállalunk teljes körű járműszállítást Magyarország egész területén, valamint külföldre is. A szállítás minden esetben biztonságosan, előzetes egyeztetés alapján történik.",
+      "Éjjel-nappal, hétvégén és ünnepnapokon is hívhatóak vagyunk, ha lemerült az akkumulátor.",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function Services() {
             Miben tudunk segíteni?
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Megbízható autómentés és járműszállítás, gyors reagálással és korrekt árakkal.
+            Megbízható autóbikázás és helyszíni akkumulátor-indítás, gyors reagálással és korrekt árakkal.
           </p>
         </div>
 

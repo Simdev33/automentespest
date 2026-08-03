@@ -7,7 +7,7 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/hero-autobikazas.png')" }}
       />
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/40" />
       <div className="absolute inset-0 bg-gradient-to-br from-yellow-950/40 via-black/30 to-yellow-950/30" />
 
       <div className="relative max-w-7xl mx-auto px-4 text-center text-white">

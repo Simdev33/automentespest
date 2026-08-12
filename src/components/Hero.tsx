@@ -1,4 +1,5 @@
 import { Phone, ArrowDown } from "lucide-react";
+import { PHONES } from "@/data/phones";
 
 export default function Hero() {
   return (
@@ -38,14 +39,17 @@ export default function Hero() {
           8:00–22:00 között 18.000 Ft, 22:00–8:00 között egyedi ár
         </p>
 
-        <div className="animate-fade-in-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <a
-            href="tel:+36701718000"
-            className="group relative bg-accent-500 hover:bg-accent-600 text-black font-bold px-8 py-4 rounded-full text-lg transition-all hover:shadow-2xl hover:shadow-accent-500/30 flex items-center gap-3"
-          >
-            <Phone className="w-5 h-5 group-hover:animate-bounce" />
-            +36 70 171 8000
-          </a>
+        <div className="animate-fade-in-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 flex-wrap">
+          {PHONES.map((phone) => (
+            <a
+              key={phone.href}
+              href={phone.href}
+              className="group relative bg-accent-500 hover:bg-accent-600 text-black font-bold px-8 py-4 rounded-full text-lg transition-all hover:shadow-2xl hover:shadow-accent-500/30 flex items-center gap-3"
+            >
+              <Phone className="w-5 h-5 group-hover:animate-bounce" />
+              {phone.display}
+            </a>
+          ))}
           <a
             href="#szolgaltatasok"
             className="bg-white/10 hover:bg-white/20 backdrop-blur text-white font-semibold px-8 py-4 rounded-full text-lg transition-all border border-white/20 hover:border-white/40"

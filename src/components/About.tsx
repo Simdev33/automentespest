@@ -1,5 +1,6 @@
 import { Phone, CheckCircle } from "lucide-react";
 import Gallery from "./Gallery";
+import { PHONES } from "@/data/phones";
 
 const highlights = [
   "Gyors és szakszerű autóbikázás",
@@ -46,13 +47,18 @@ export default function About() {
               ))}
             </ul>
 
-            <a
-              href="tel:+36701718000"
-              className="inline-flex items-center gap-3 bg-accent-500 hover:bg-accent-600 text-black font-bold px-8 py-4 rounded-full text-lg transition-all hover:shadow-xl hover:shadow-accent-500/20"
-            >
-              <Phone className="w-5 h-5" />
-              Hívás most
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              {PHONES.map((phone) => (
+                <a
+                  key={phone.href}
+                  href={phone.href}
+                  className="inline-flex items-center gap-3 bg-accent-500 hover:bg-accent-600 text-black font-bold px-8 py-4 rounded-full text-lg transition-all hover:shadow-xl hover:shadow-accent-500/20"
+                >
+                  <Phone className="w-5 h-5" />
+                  {phone.display}
+                </a>
+              ))}
+            </div>
           </div>
 
           <Gallery />

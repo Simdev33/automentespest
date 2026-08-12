@@ -1,6 +1,7 @@
 import { Phone, MapPin } from "lucide-react";
 import { CookieSettingsButton } from "./CookieConsent";
 import Image from "next/image";
+import { PHONES } from "@/data/phones";
 
 export default function Footer() {
   return (
@@ -52,15 +53,17 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Elérhetőségek</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-accent-400" />
-                <a
-                  href="tel:+36701718000"
-                  className="text-gray-500 hover:text-accent-400 transition-colors text-sm"
-                >
-                  +36 70 171 8000
-                </a>
-              </li>
+              {PHONES.map((phone) => (
+                <li key={phone.href} className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-accent-400" />
+                  <a
+                    href={phone.href}
+                    className="text-gray-500 hover:text-accent-400 transition-colors text-sm"
+                  >
+                    {phone.display}
+                  </a>
+                </li>
+              ))}
               <li className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-accent-400" />
                 <span className="text-gray-500 text-sm">

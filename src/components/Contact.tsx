@@ -1,4 +1,5 @@
 import { MapPin, Phone } from "lucide-react";
+import { PHONES } from "@/data/phones";
 
 export default function Contact() {
   return (
@@ -33,14 +34,17 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-bold text-white text-lg mb-1">
-                  Telefonszám
+                  Telefonszámok
                 </h3>
-                <a
-                  href="tel:+36701718000"
-                  className="block text-2xl font-bold text-accent-500 hover:text-accent-400 transition-colors"
-                >
-                  +36 70 171 8000
-                </a>
+                {PHONES.map((phone) => (
+                  <a
+                    key={phone.href}
+                    href={phone.href}
+                    className="block text-2xl font-bold text-accent-500 hover:text-accent-400 transition-colors"
+                  >
+                    {phone.display}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -52,13 +56,18 @@ export default function Contact() {
             <p className="text-gray-400 mb-6">
               Hívjon minket bármikor, az év minden napján, 0-24!
             </p>
-            <a
-              href="tel:+36701718000"
-              className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-black font-bold px-6 py-3 rounded-full transition-all hover:shadow-lg"
-            >
-              <Phone className="w-5 h-5" />
-              +36 70 171 8000
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              {PHONES.map((phone) => (
+                <a
+                  key={phone.href}
+                  href={phone.href}
+                  className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-black font-bold px-6 py-3 rounded-full transition-all hover:shadow-lg"
+                >
+                  <Phone className="w-5 h-5" />
+                  {phone.display}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

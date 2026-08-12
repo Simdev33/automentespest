@@ -1,4 +1,5 @@
 import { Truck, Globe, Phone } from "lucide-react";
+import { PHONES } from "@/data/phones";
 
 const pricingCards = [
   {
@@ -96,7 +97,7 @@ export default function Pricing() {
 
               <div className="mt-auto pt-8">
                 <a
-                  href="tel:+36701718000"
+                  href={PHONES[0].href}
                   className={`w-full flex items-center justify-center gap-2 font-bold py-3 px-6 rounded-full transition-all text-sm ${
                     card.highlight
                       ? "bg-accent-500 hover:bg-accent-600 text-black hover:shadow-lg"

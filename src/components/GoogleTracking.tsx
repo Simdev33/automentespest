@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { useEffect } from "react";
+import { PHONES } from "@/data/phones";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID || "";
@@ -57,7 +58,7 @@ export function GtagScripts() {
   if (GADS_ID) {
     configLines.push(`gtag('config', '${GADS_ID}');`);
     if (GADS_CONVERSION_LABEL) {
-      configLines.push(`gtag('config', '${GADS_CONVERSION_LABEL}', { 'phone_conversion_number': '+36 70 171 8000' });`);
+      configLines.push(`gtag('config', '${GADS_CONVERSION_LABEL}', { 'phone_conversion_number': '${PHONES[0].display}' });`);
     }
   }
 

@@ -1,4 +1,5 @@
 import { Truck, Package, Wrench, RefreshCw, Fuel, Globe, Phone } from "lucide-react";
+import { PHONES } from "@/data/phones";
 
 const services = [
   {
@@ -71,7 +72,7 @@ export default function Services() {
                 {service.description}
               </p>
               <a
-                href="tel:+36701718000"
+                href={PHONES[0].href}
                 className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:text-accent-400 transition-colors text-sm"
               >
                 <Phone className="w-4 h-4" />

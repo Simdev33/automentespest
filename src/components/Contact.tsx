@@ -34,7 +34,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-bold text-white text-lg mb-1">
-                  Telefonszámok
+                  Telefonszám
                 </h3>
                 {PHONES.map((phone) => (
                   <a

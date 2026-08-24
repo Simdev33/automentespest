@@ -6,13 +6,18 @@ import { PHONES } from "@/data/phones";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID || "";
-const GADS_ID = process.env.NEXT_PUBLIC_GADS_ID || "";
-const GADS_CONVERSION_LABEL = process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL || "";
+/** Google Ads account ID from conversion snippet */
+const GADS_ID = process.env.NEXT_PUBLIC_GADS_ID || "AW-18039875633";
+/** Phone click conversion (Google Ads snippet) */
+const GADS_CONVERSION_LABEL =
+  process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL ||
+  "AW-18039875633/VtyJCOvIguccELHQippD";
 
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     dataLayer?: unknown[];
+    gtag_report_conversion?: (url?: string) => boolean;
   }
 }
 
@@ -57,9 +62,9 @@ export function GtagScripts() {
   if (GA4_ID) configLines.push(`gtag('config', '${GA4_ID}');`);
   if (GADS_ID) {
     configLines.push(`gtag('config', '${GADS_ID}');`);
-    if (GADS_CONVERSION_LABEL) {
-      configLines.push(`gtag('config', '${GADS_CONVERSION_LABEL}', { 'phone_conversion_number': '${PHONES[0].display}' });`);
-    }
+    configLines.push(
+      `gtag('config', '${GADS_CONVERSION_LABEL}', { 'phone_conversion_number': '${PHONES[0].display}' });`
+    );
   }
 
   return (
@@ -77,6 +82,24 @@ export function GtagScripts() {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             ${configLines.join("\n            ")}
+
+            function gtag_report_conversion(url) {
+              var navigated = false;
+              var callback = function () {
+                if (navigated || typeof(url) == 'undefined') return;
+                navigated = true;
+                window.location = url;
+              };
+              gtag('event', 'conversion', {
+                'send_to': '${GADS_CONVERSION_LABEL}',
+                'value': 1.0,
+                'currency': 'HUF',
+                'event_callback': callback
+              });
+              setTimeout(callback, 1000);
+              return false;
+            }
+            window.gtag_report_conversion = gtag_report_conversion;
           `,
         }}
       />
@@ -86,16 +109,21 @@ export function GtagScripts() {
 
 export function PhoneConversionTracker() {
   useEffect(() => {
-    if (!GADS_CONVERSION_LABEL) return;
-
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const link = target.closest('a[href^="tel:"]');
-      if (link && typeof window.gtag === "function") {
-        window.gtag("event", "conversion", {
-          send_to: GADS_CONVERSION_LABEL,
-        });
+      const link = target.closest('a[href^="tel:"]') as HTMLAnchorElement | null;
+      if (!link) return;
+
+      e.preventDefault();
+      const url = link.getAttribute("href") || link.href;
+
+      if (typeof window.gtag_report_conversion === "function") {
+        window.gtag_report_conversion(url);
+        return;
       }
+
+      // Fallback if gtag script has not loaded yet
+      window.location.href = url;
     };
 
     document.addEventListener("click", handleClick);

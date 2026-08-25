@@ -6,12 +6,25 @@ import { PHONES } from "@/data/phones";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID || "";
-/** Google Ads account ID from conversion snippet */
 const GADS_ID = process.env.NEXT_PUBLIC_GADS_ID || "AW-18039875633";
-/** Phone click conversion (Google Ads snippet) */
-const GADS_CONVERSION_LABEL =
-  process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL ||
-  "AW-18039875633/VtyJCOvIguccELHQippD";
+
+/**
+ * Click-to-call conversion (Google Ads snippet the user provided).
+ * Hardcoded on purpose: Vercel still had an older CALL conversion label in env,
+ * which does not accept website phone-click events.
+ */
+const GADS_CLICK_CONVERSION = "AW-18039875633/VtyJCOvIguccELHQippD";
+
+/**
+ * Optional "Calls to a phone number on your website" conversion
+ * (Google forwarding numbers). Kept separate from click conversion.
+ */
+const GADS_CALL_CONVERSION =
+  process.env.NEXT_PUBLIC_GADS_CALL_CONVERSION_LABEL ||
+  "AW-18039875633/2_aqCN-fl48cELHQippD";
+
+const PHONE_DISPLAY = PHONES[0].display;
+const isPlaceholderGtm = !GTM_ID || /X{3,}/i.test(GTM_ID);
 
 declare global {
   interface Window {
@@ -22,7 +35,7 @@ declare global {
 }
 
 export function GTMHead() {
-  if (!GTM_ID) return null;
+  if (isPlaceholderGtm) return null;
   return (
     <Script
       id="gtm-script"
@@ -41,7 +54,7 @@ export function GTMHead() {
 }
 
 export function GTMBody() {
-  if (!GTM_ID) return null;
+  if (isPlaceholderGtm) return null;
   return (
     <noscript>
       <iframe
@@ -62,9 +75,34 @@ export function GtagScripts() {
   if (GA4_ID) configLines.push(`gtag('config', '${GA4_ID}');`);
   if (GADS_ID) {
     configLines.push(`gtag('config', '${GADS_ID}');`);
-    configLines.push(
-      `gtag('config', '${GADS_CONVERSION_LABEL}', { 'phone_conversion_number': '${PHONES[0].display}' });`
-    );
+
+    // Website call tracking with Google forwarding numbers (actual calls).
+    // Callback is required for React apps — auto DOM rewrite often fails.
+    if (GADS_CALL_CONVERSION) {
+      configLines.push(`
+            gtag('config', '${GADS_CALL_CONVERSION}', {
+              'phone_conversion_number': '${PHONE_DISPLAY}',
+              'phone_conversion_callback': function(formatted_number, mobile_number) {
+                function applyForwardingNumber() {
+                  document.querySelectorAll('a[href^="tel:"]').forEach(function(a) {
+                    var want = 'tel:' + mobile_number;
+                    if (a.getAttribute('href') !== want) {
+                      a.setAttribute('href', want);
+                    }
+                    var text = (a.textContent || '').trim();
+                    if (/^[+0-9\\s().-]+$/.test(text) && text !== formatted_number) {
+                      a.textContent = formatted_number;
+                    }
+                  });
+                }
+                applyForwardingNumber();
+                if (!window.__phoneConvObserver) {
+                  window.__phoneConvObserver = new MutationObserver(applyForwardingNumber);
+                  window.__phoneConvObserver.observe(document.body, { childList: true, subtree: true });
+                }
+              }
+            });`);
+    }
   }
 
   return (
@@ -81,23 +119,23 @@ export function GtagScripts() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            ${configLines.join("\n            ")}
+            ${configLines.join("\n")}
 
+            // Click-to-call conversion. For tel: links we must NOT block/delay
+            // navigation — mobile browsers drop dialer opens after async callbacks.
             function gtag_report_conversion(url) {
-              var navigated = false;
-              var callback = function () {
-                if (navigated || typeof(url) == 'undefined') return;
-                navigated = true;
-                window.location = url;
-              };
+              var isTel = typeof url === 'string' && url.indexOf('tel:') === 0;
               gtag('event', 'conversion', {
-                'send_to': '${GADS_CONVERSION_LABEL}',
+                'send_to': '${GADS_CLICK_CONVERSION}',
                 'value': 1.0,
                 'currency': 'HUF',
-                'event_callback': callback
+                'event_callback': function () {
+                  if (!isTel && typeof url !== 'undefined') {
+                    window.location = url;
+                  }
+                }
               });
-              setTimeout(callback, 1000);
-              return false;
+              return isTel ? true : false;
             }
             window.gtag_report_conversion = gtag_report_conversion;
           `,
@@ -114,23 +152,25 @@ export function PhoneConversionTracker() {
       const link = target.closest('a[href^="tel:"]') as HTMLAnchorElement | null;
       if (!link) return;
 
-      e.preventDefault();
-      const url = link.getAttribute("href") || link.href;
+      // Never preventDefault on tel: — keep the user gesture for the dialer.
+      const url = link.getAttribute("href") || undefined;
 
       if (typeof window.gtag_report_conversion === "function") {
         window.gtag_report_conversion(url);
-        return;
+      } else if (typeof window.gtag === "function") {
+        window.gtag("event", "conversion", {
+          send_to: GADS_CLICK_CONVERSION,
+          value: 1.0,
+          currency: "HUF",
+        });
       }
-
-      // Fallback if gtag script has not loaded yet
-      window.location.href = url;
     };
 
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+    document.addEventListener("click", handleClick, true);
+    return () => document.removeEventListener("click", handleClick, true);
   }, []);
 
   return null;
 }
 
-export { GADS_CONVERSION_LABEL };
+export { GADS_CLICK_CONVERSION as GADS_CONVERSION_LABEL };
